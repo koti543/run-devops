@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kotirundevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kotirundevops
+  template:
+    metadata:
+      labels:
+        app: kotirundevops 
+    spec:
+      containers:
+        - name: kotirundevops 
+          image: containrimage.azurecr.io/kotirundevops
+          ports:
+          - containerPort: 80
